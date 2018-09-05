@@ -60,6 +60,5 @@ task copyToLib(type: Copy) {
     from(configurations.compile)
 }
 
-stage.dependsOn(copyToLib)
 
 mainClassName = 'ai.swim.App'
