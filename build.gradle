@@ -55,4 +55,11 @@ task runClient(type: JavaExec) {
   systemProperties System.properties
 }
 
+task copyToLib(type: Copy) {
+    into "$buildDir/lib"
+    from(configurations.compile)
+}
+
+stage.dependsOn(copyToLib)
+
 mainClassName = 'ai.swim.App'
